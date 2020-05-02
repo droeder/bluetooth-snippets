@@ -29,19 +29,18 @@ int main(int argc, char *argv[])
   struct hci_dev_info di;
 
 
-
   // if(argc < 4)
   //   {
   //     printf("%s <btaddr> <channel> <cmd>\n", argv[0]);
   //     exit(0);
   //   }
   
-  
   //strcpy(str, "B8:27:EB:BE:F8:78");
 
   //char addr[] = "B8:27:EB:BE:F8:78";  //argv[1]
 
-  char addr[] = "1A:31:72:70:4D:1C";  //argv[1]  
+  char addr[] = "78:F8:BE:EB:27:B8";
+  //char addr[] = "1A:31:72:70:4D:1C";  //argv[1]  
   int channel = 4; //atoi(argv[2])
   char cmd[] = "testCommand"; //argv[3]
 

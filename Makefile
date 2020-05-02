@@ -24,6 +24,12 @@ rfcomm-server:
 sdpbrowse:
 	$(CC) sdpbrowse.c -o $@
 
+rf-server:
+	$(CC) rf-server.c -o $@ ${LDLIBS}
+
+rf-client:
+	$(CC) rf-client.c -o $@ ${LDLIBS}
+
 clean:
 	rm -f *.o
 	rm -f rfcomm-client rfcomm-packet rfcomm-server sdpbrowse hcishow
