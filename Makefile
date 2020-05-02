@@ -8,8 +8,12 @@ all:rfcomm-server
 #	$(CC) l2cap-packet.c -o $@
 #	$(CC) obex-test.c -o $@
 
+
+hcishow: 
+	$(CC) hcishow.c -o $@ ${LDLIBS}
+
 rfcomm-client:
-	$(CC) rfcomm-client.c -o $@
+	$(CC) rfcomm-client.c -o $@ ${LDLIBS}
 
 rfcomm-packet:
 	$(CC) rfcomm-packet.c -o $@
@@ -22,4 +26,4 @@ sdpbrowse:
 
 clean:
 	rm -f *.o
-	rm -f rfcomm-client rfcomm-packet rfcomm-server sdpbrowse
+	rm -f rfcomm-client rfcomm-packet rfcomm-server sdpbrowse hcishow

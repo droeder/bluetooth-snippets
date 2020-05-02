@@ -9,14 +9,17 @@
   Compile with gcc -lbluetooth <executable> <source>
 */
 
+#include <stdlib.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <unistd.h>
 
 #include <bluetooth/bluetooth.h>
 #include <bluetooth/rfcomm.h>
 #include <bluetooth/hci.h>
+#include <bluetooth/hci_lib.h>
 
 int main(int argc, char *argv[])
 {
