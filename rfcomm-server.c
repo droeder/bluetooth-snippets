@@ -48,6 +48,7 @@ int main(void)
 
   listen(sock,QUEUE);
   printf("Waiting for connections...\n\n");  
+  
 
   while(client = accept(sock, (struct sockaddr *)&addr, &alen))
     {
