@@ -3,9 +3,33 @@
 #include <sys/socket.h>
 #include <bluetooth/bluetooth.h>
 #include <bluetooth/rfcomm.h>
+#include <bluetooth/hci.h>
+#include <sys/ioctl.h>
+
 
 int main(int argc, char **argv)
 {
+
+
+   int ctl = socket(AF_BLUETOOTH, SOCK_RAW, BTPROTO_HCI);
+   // Open HCI socket
+   if (ctl < 0) {
+     // Can't open HCI socket
+   }
+
+    struct hci_dev_req dr;
+    dr.dev_id = 0;  // hci0
+    dr.dev_opt = SCAN_DISABLED;
+    dr.dev_opt = SCAN_PAGE | SCAN_INQUIRY;
+
+    if (ioctl(ctl, HCISETSCAN, (unsigned long)&dr) < 0) {
+      printf("Can't set scan mode");
+    }
+    else {
+       printf("hci0 is now discoverable");
+    }
+    close(ctl);
+
 
     printf("test\n");
     struct sockaddr_rc loc_addr = { 0 }, rem_addr = { 0 };

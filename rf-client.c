@@ -8,7 +8,9 @@ int main(int argc, char **argv)
 {
     struct sockaddr_rc addr = { 0 };
     int s, status;
-    char dest[18] = "01:23:45:67:89:AB";
+    //char dest[18] = "01:23:45:67:89:AB";
+    //char dest[18] = "78:F8:BE:EB:27:B8";
+    char dest[18] = "B8:27:EB:BE:F8:78";
 
     printf("allocating socketi\n");
     // allocate a socket
